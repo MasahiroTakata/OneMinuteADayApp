@@ -12,6 +12,7 @@ export const colors = {
     900: '#064e3b',
   },
   teal: {
+    400: '#2dd4bf',
     600: '#0d9488',
   },
   slate: {
@@ -25,6 +26,7 @@ export const colors = {
     700: '#334155',
     800: '#1e293b',
     900: '#0f172a',
+    950: '#020617',
   },
   sky: {
     500: '#0ea5e9',
@@ -34,12 +36,16 @@ export const colors = {
     600: '#2563eb',
   },
   indigo: {
+    50: '#eef2ff',
     500: '#6366f1',
     600: '#4f46e5',
+    800: '#3730a3',
   },
   rose: {
+    50: '#fff1f2',
     500: '#f43f5e',
     600: '#e11d48',
+    800: '#9f1239',
   },
   amber: {
     50: '#fffbeb',
@@ -76,6 +82,21 @@ export const categories = [
   { label: '📚 学習・読書', value: '学習・読書', color: colors.emerald[600] },
   { label: '✨ 健康・マインド', value: '健康・マインド', color: colors.emerald[600] },
 ];
+
+export const accentThemes = [
+  { key: 'emerald', label: 'エメラルド', swatch: colors.emerald[500], background: colors.emerald[50], border: colors.emerald[500], text: colors.emerald[800] },
+  { key: 'indigo', label: 'インディゴ', swatch: colors.indigo[600], background: colors.indigo[50], border: colors.indigo[500], text: colors.indigo[800] },
+  { key: 'amber', label: 'サンセット', swatch: colors.amber[500], background: colors.amber[50], border: colors.amber[500], text: colors.amber[800] },
+  { key: 'rose', label: 'ローズ', swatch: colors.rose[500], background: colors.rose[50], border: colors.rose[500], text: colors.rose[800] },
+] as const;
+
+export type AccentKey = (typeof accentThemes)[number]['key'];
+
+export const durationOptions = [
+  { seconds: 60, label: '1分 (標準)' },
+  { seconds: 180, label: '3分' },
+  { seconds: 300, label: '5分' },
+] as const;
 
 export const hours = ['06', '07', '08', '12', '18', '21'];
 export const minutes = ['00', '30'];
