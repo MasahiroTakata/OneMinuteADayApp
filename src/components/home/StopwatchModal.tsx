@@ -18,7 +18,7 @@ type TimerState = 'idle' | 'running' | 'paused' | 'done';
 export default function StopwatchModal({ visible, onClose }: StopwatchModalProps) {
   const [timeLeft, setTimeLeft] = useState(60);
   const [timerState, setTimerState] = useState<TimerState>('idle');
-  const [timerInterval, setTimerInterval] = useState<NodeJS.Timeout | null>(null);
+  const [timerInterval, setTimerInterval] = useState<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (!visible) {
